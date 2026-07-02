@@ -1,2 +1,25 @@
-# agili-service-desk
-Sistema de gestão de chamados internos para organizações, desenvolvido em ASP.NET Core MVC com Entity Framework Core e SQL Server.
+# Ágili Service Desk
+
+Sistema de gestão de solicitações internas desenvolvido em ASP.NET Core MVC.
+
+## Tecnologias
+
+- ASP.NET Core MVC
+- C#
+- Entity Framework Core
+- SQL Server
+- Bootstrap
+
+## Documentação
+
+- Requisitos
+- Modelo do banco de dados
+
+## Estrutura
+
+docs/
+src/
+
+## Licença
+
+MIT
