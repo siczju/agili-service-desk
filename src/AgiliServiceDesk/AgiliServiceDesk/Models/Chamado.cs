@@ -6,7 +6,7 @@ namespace AgiliServiceDesk.Models
 {
     public class Chamado
     {
-        public int Id;
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(150)]
@@ -14,10 +14,13 @@ namespace AgiliServiceDesk.Models
 
         [Required]
         public string Descricao { get; set; } = string.Empty;
-        public Prioridade prioridade;
-        public DateTime DataAbertura;
-        public int CategoriaId;
-        public Categoria Categoria { get; set; } = null
 
+        public Prioridade Prioridade { get; set; }
+
+        public DateTime DataAbertura { get; set; }
+
+        public int CategoriaId { get; set; }
+
+        public Categoria Categoria { get; set; } = null!;
     }
 }
