@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AgiliServiceDesk")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c0332dad46a48abf0fe7418ec73ba77acf0e2d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17ea0356139e23c9c016dcb7976e9f420aa62aae")]
 [assembly: System.Reflection.AssemblyProductAttribute("AgiliServiceDesk")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AgiliServiceDesk")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
