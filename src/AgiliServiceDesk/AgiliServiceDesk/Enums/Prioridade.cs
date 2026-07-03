@@ -1,6 +1,10 @@
 ﻿namespace AgiliServiceDesk.Enums
 {
-    public class Prioridade
+    public enum Prioridade
     {
+        Baixa,
+        Media,
+        Alta,
+        Critica
     }
 }

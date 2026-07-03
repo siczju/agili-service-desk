@@ -1,6 +1,10 @@
 ﻿namespace AgiliServiceDesk.Enums
 {
-    public class StatusChamado
+    public enum StatusChamado
     {
+        Novo,
+        EmAtendimento,
+        Resolvido,
+        Fechado
     }
 }
