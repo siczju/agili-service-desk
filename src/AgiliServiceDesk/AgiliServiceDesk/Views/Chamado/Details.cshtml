@@ -1,0 +1,30 @@
+﻿@model AgiliServiceDesk.Models.Chamado
+
+@{
+    ViewData["Title"] = "Detalhes do Chamado";
+}
+
+<div class="mb-3 d-flex justify-content-between align-items-center">
+    <h2>Detalhes</h2>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+    </div>
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">Título</dt>
+    <dd class="col-sm-10">@Model.Titulo</dd>
+
+    <dt class="col-sm-2">Categoria</dt>
+    <dd class="col-sm-10">@Model.Categoria?.Nome</dd>
+
+    <dt class="col-sm-2">Descrição</dt>
+    <dd class="col-sm-10">@Model.Descricao</dd>
+
+    <dt class="col-sm-2">Prioridade</dt>
+    <dd class="col-sm-10">@Model.Prioridade</dd>
+
+    <dt class="col-sm-2">Aberto em</dt>
+    <dd class="col-sm-10">@Model.DataAbertura.ToLocalTime().ToString("g")</dd>
+</dl>

@@ -1,0 +1,29 @@
+﻿@model AgiliServiceDesk.Models.Categoria
+
+@{
+    ViewData["Title"] = "Excluir Categoria";
+}
+
+<h2>Excluir Categoria</h2>
+
+<hr />
+
+<h4>Tem certeza que deseja excluir esta categoria?</h4>
+
+<div class="mb-3">
+    <strong>Nome:</strong> @Model.Nome
+</div>
+
+<form asp-action="Delete" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger">
+        Excluir
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Cancelar
+    </a>
+
+</form>
