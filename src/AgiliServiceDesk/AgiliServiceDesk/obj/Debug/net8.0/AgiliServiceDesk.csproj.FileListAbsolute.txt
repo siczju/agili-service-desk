@@ -136,6 +136,6 @@ C:\Users\T-GAMER\source\repos\github\agili-service-desk\src\AgiliServiceDesk\Agi
 C:\Users\T-GAMER\source\repos\github\agili-service-desk\src\AgiliServiceDesk\AgiliServiceDesk\obj\Debug\net8.0\ref\AgiliServiceDesk.dll
 C:\Users\T-GAMER\source\repos\github\agili-service-desk\src\AgiliServiceDesk\AgiliServiceDesk\obj\Debug\net8.0\AgiliServiceDesk.RazorAssemblyInfo.cache
 C:\Users\T-GAMER\source\repos\github\agili-service-desk\src\AgiliServiceDesk\AgiliServiceDesk\obj\Debug\net8.0\AgiliServiceDesk.RazorAssemblyInfo.cs
-C:\Users\T-GAMER\source\repos\github\agili-service-desk\src\AgiliServiceDesk\AgiliServiceDesk\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\T-GAMER\source\repos\github\agili-service-desk\src\AgiliServiceDesk\AgiliServiceDesk\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\T-GAMER\source\repos\github\agili-service-desk\src\AgiliServiceDesk\AgiliServiceDesk\obj\Debug\net8.0\scopedcss\projectbundle\AgiliServiceDesk.bundle.scp.css
+C:\Users\T-GAMER\source\repos\github\agili-service-desk\src\AgiliServiceDesk\AgiliServiceDesk\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

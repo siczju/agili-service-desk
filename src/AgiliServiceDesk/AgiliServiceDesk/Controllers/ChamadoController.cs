@@ -56,13 +56,6 @@ namespace AgiliServiceDesk.Controllers
         [HttpPost]
         public IActionResult Create(Chamado chamado)
         {
-            foreach (var item in ModelState)
-            {
-                Console.WriteLine(item.Key);
-
-                foreach (var erro in item.Value.Errors)
-                    Console.WriteLine(erro.ErrorMessage);
-            }
             if (!ModelState.IsValid)
             {
                 var vm = new ChamadoFormViewModel
@@ -115,6 +108,7 @@ namespace AgiliServiceDesk.Controllers
             existente.Titulo = chamado.Titulo;
             existente.Descricao = chamado.Descricao;
             existente.Prioridade = chamado.Prioridade;
+            existente.Status = chamado.Status;
             existente.CategoriaId = chamado.CategoriaId;
 
             _context.SaveChanges();
