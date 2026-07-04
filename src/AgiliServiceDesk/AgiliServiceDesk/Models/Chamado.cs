@@ -16,6 +16,7 @@ namespace AgiliServiceDesk.Models
         public string Descricao { get; set; } = string.Empty;
 
         public Prioridade Prioridade { get; set; }
+        public StatusChamado Status { get; set; } = StatusChamado.Aberto;
 
         public DateTime DataAbertura { get; set; }
 
