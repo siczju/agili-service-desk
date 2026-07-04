@@ -1,0 +1,52 @@
+﻿@model AgiliServiceDesk.Models.ChamadoFormViewModel
+@using AgiliServiceDesk.Enums
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewData["Title"] = "Editar Chamado";
+}
+
+<div class="mb-3">
+    <h2>Editar Chamado</h2>
+</div>
+
+<form asp-action="Edit" method="post" asp-antiforgery="false">
+    <input type="hidden" asp-for="Chamado.Id" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Chamado.Titulo" class="form-label">Título</label>
+        <input asp-for="Chamado.Titulo" class="form-control" />
+        <span asp-validation-for="Chamado.Titulo" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Chamado.Descricao" class="form-label">Descrição</label>
+        <textarea asp-for="Chamado.Descricao" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="Chamado.Descricao" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Chamado.CategoriaId" class="form-label">Categoria</label>
+            <select asp-for="Chamado.CategoriaId" class="form-select" asp-items="@(new SelectList(Model.Categorias, "Id", "Nome"))"></select>
+            <span asp-validation-for="Chamado.CategoriaId" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="Chamado.Prioridade" class="form-label">Prioridade</label>
+            <select asp-for="Chamado.Prioridade" class="form-select" asp-items="Html.GetEnumSelectList<Prioridade>()"></select>
+            <span asp-validation-for="Chamado.Prioridade" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
