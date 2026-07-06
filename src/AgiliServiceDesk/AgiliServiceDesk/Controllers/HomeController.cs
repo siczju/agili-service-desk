@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AgiliServiceDesk.Data;
+using AgiliServiceDesk.Enums;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AgiliServiceDesk.Data;
 
 namespace AgiliServiceDesk.Controllers
 {
@@ -16,7 +17,6 @@ namespace AgiliServiceDesk.Controllers
         public IActionResult Index()
         {
             ViewBag.TotalChamados = _context.Chamados.Count();
-
             ViewBag.TotalCategorias = _context.Categorias.Count();
 
             ViewBag.UltimosChamados = _context.Chamados
@@ -24,6 +24,15 @@ namespace AgiliServiceDesk.Controllers
                 .OrderByDescending(c => c.DataAbertura)
                 .Take(5)
                 .ToList();
+
+            ViewBag.ChamadosConcluidos = _context.Chamados
+                .Count(c => c.Status == StatusChamado.Concluido);
+
+            ViewBag.ChamadosAbertos = _context.Chamados
+                .Count(c => c.Status == StatusChamado.Aberto);
+
+            ViewBag.ChamadosEmAndamento = _context.Chamados
+                .Count(c => c.Status == StatusChamado.EmAndamento);
 
             return View();
         }

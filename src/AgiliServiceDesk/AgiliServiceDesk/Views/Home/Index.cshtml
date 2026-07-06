@@ -1,39 +1,58 @@
 ﻿@using AgiliServiceDesk.Models
+@using AgiliServiceDesk.Enums
 
 @{
     ViewData["Title"] = "Dashboard";
 
-    var ultimosChamados = ViewBag.UltimosChamados as List<Chamado>;
+    var chamados = ViewBag.UltimosChamados as List<Chamado>;
 }
 
 <h2 class="mb-4">Dashboard</h2>
 
-<div class="row mb-4">
+<div class="row g-3 mb-4">
 
-    <div class="col-md-6">
-        <div class="card text-bg-primary">
-            <div class="card-body">
-                <h5 class="card-title">Chamados</h5>
+    <div class="col-md-3">
+        <div class="card bg-info text-white shadow">
+            <div class="card-body text-center">
+                <h5>Total de Chamados</h5>
                 <h2>@ViewBag.TotalChamados</h2>
             </div>
         </div>
     </div>
 
-    <div class="col-md-6">
-        <div class="card text-bg-success">
-            <div class="card-body">
-                <h5 class="card-title">Categorias</h5>
-                <h2>@ViewBag.TotalCategorias</h2>
+    <div class="col-md-3">
+        <div class="card bg-dark text-white shadow">
+            <div class="card-body text-center">
+                <h5>Concluídos</h5>
+                <h2>@ViewBag.ChamadosConcluidos</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card bg-primary text-white shadow">
+            <div class="card-body text-center">
+                <h5>Abertos</h5>
+                <h2>@ViewBag.ChamadosAbertos</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card bg-secondary text-white shadow">
+            <div class="card-body text-center">
+                <h5>Em andamento</h5>
+                <h2>@ViewBag.ChamadosEmAndamento</h2>
             </div>
         </div>
     </div>
 
 </div>
 
-<div class="card">
+<div class="card shadow">
 
     <div class="card-header">
-        Últimos Chamados
+        <strong>Últimos Chamados</strong>
     </div>
 
     <div class="card-body">
@@ -45,19 +64,57 @@
                     <th>Título</th>
                     <th>Categoria</th>
                     <th>Prioridade</th>
-                    <th>Data</th>
+                    <th>Status</th>
                 </tr>
             </thead>
 
             <tbody>
 
-                @foreach (var chamado in ultimosChamados!)
+                @foreach (var item in chamados!)
                 {
                     <tr>
-                        <td>@chamado.Titulo</td>
-                        <td>@chamado.Categoria?.Nome</td>
-                        <td>@chamado.Prioridade</td>
-                        <td>@chamado.DataAbertura.ToLocalTime().ToString("g")</td>
+
+                        <td>@item.Titulo</td>
+
+                        <td>@item.Categoria?.Nome</td>
+
+                        <td>
+                            @switch (item.Prioridade)
+                            {
+                                case Prioridade.Baixa:
+                                    <span class="badge bg-success">Baixa</span>
+                                    break;
+
+                                case Prioridade.Media:
+                                    <span class="badge bg-warning text-dark">Média</span>
+                                    break;
+
+                                case Prioridade.Alta:
+                                    <span class="badge bg-info text-dark">Alta</span>
+                                    break;
+
+                                case Prioridade.Critica:
+                                    <span class="badge bg-danger">Crítica</span>
+                                    break;
+                            }
+                        </td>
+                        <td>
+                            @switch (item.Status)
+                            {
+                                case StatusChamado.Aberto:
+                                    <span class="badge bg-primary">Aberto</span>
+                                    break;
+
+                                case StatusChamado.EmAndamento:
+                                    <span class="badge bg-secondary">Em andamento</span>
+                                    break;
+
+                                case StatusChamado.Concluido:
+                                    <span class="badge bg-dark">Concluído</span>
+                                    break;
+                            }
+                        </td>
+
                     </tr>
                 }
 

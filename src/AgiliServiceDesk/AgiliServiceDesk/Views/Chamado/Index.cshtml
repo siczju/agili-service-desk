@@ -34,18 +34,22 @@
                 <td>@item.Titulo</td>
                 <td>@item.Categoria?.Nome</td>
                 <td>
-                    @switch (item.Status)
+                    @switch (item.Prioridade)
                     {
-                        case StatusChamado.Aberto:
-                            <span class="badge bg-primary">Aberto</span>
+                        case Prioridade.Baixa:
+                            <span class="badge bg-success">Baixa</span>
                             break;
 
-                        case StatusChamado.EmAndamento:
-                            <span class="badge bg-warning text-dark">Em andamento</span>
+                        case Prioridade.Media:
+                            <span class="badge bg-warning text-dark">Média</span>
                             break;
 
-                        case StatusChamado.Concluido:
-                            <span class="badge bg-success">Concluído</span>
+                        case Prioridade.Alta:
+                            <span class="badge bg-info text-dark">Alta</span>
+                            break;
+
+                        case Prioridade.Critica:
+                            <span class="badge bg-danger">Crítica</span>
                             break;
                     }
                 </td>
@@ -57,11 +61,11 @@
                             break;
 
                         case StatusChamado.EmAndamento:
-                            <span class="badge bg-warning text-dark">Em andamento</span>
+                            <span class="badge bg-secondary">Em andamento</span>
                             break;
 
                         case StatusChamado.Concluido:
-                            <span class="badge bg-success">Concluído</span>
+                            <span class="badge bg-dark">Concluído</span>
                             break;
                     }
                 </td>
